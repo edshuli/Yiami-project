@@ -1,19 +1,21 @@
 <template>
 <div class="container cardContainer">
         <div classs="card">
-         <div v-for="post in posts" v-bind:key="post.strCategory" class="card">
+         <div v-for="post in posts" :key="post.id" class="card">
+             <div v-for="item in post" :key="item.idMeal">
             <img class="card-img-top">
             <div class="card-body">
                 <h5 class="card-title">
-                    {{post.strMeal}}
+                    {{item.strMeal}}
                 </h5>
-                <p class="card-text">{{post.Area}}</p>
+                <p class="card-text">{{item.strArea}}</p>
                 <div class="card-action text-center">
                    <a href="#">Read More</a>
                 </div>
             </div>
          </div>
-       </div> 
+         </div>
+    </div> 
 </div>
 </template>
 
