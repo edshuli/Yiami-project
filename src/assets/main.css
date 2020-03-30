@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Sacramento|Ubuntu:100,200,300,400,500,600,700|Unna&display=swap:100,200,300,400,500,600,700');
+body {
+    height: 100vh;
+    background: url(hpImg.jpg) no-repeat bottom right fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    max-width: 100%;
+    font-family: 'Ubuntu', sans-serif;
+    color: red;
+    color: #222;
+    font-weight: 400;
+    background-color: #f6efe5;
+}
+
+
+/*-----------CalloutContainer--------*/
+
+.opaque-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.19);
+}
+
+
+/*----Card------*/
+
+.card {
+    margin-top: 50px;
+    height: auto;
+}
+
+img {
+    width: 10rem;
+    height: 300px;
+}
+
+.card-title {
+    color: #92222d;
+    bottom: 0;
+    left: 0;
+    max-width: 100%;
+    padding: 24px;
+    font-size: 20px;
+    font-weight: 400;
+    font-family: 'Unna', serif;
+}
+
+.card-content p {
+    margin: 0;
+    color: #212529;
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.card-action {
+    background-color: #cd5c5c8a;
+}
+
+.card .card-action a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating) {
+    color: #212529;
+}
+
+
+/*-----Media Queries---*/
+
+@media(max-width: 639px) {
+    #menu-dropdown {
+        background-color: #dae0e5bd;
+    }
+}
+
+@media (min-width: 1025px) {
+    body {
+        background: url(hmImg1.jpg) no-repeat bottom right fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+    .jumbotron {
+        margin-top: 5%;
+    }
+}
