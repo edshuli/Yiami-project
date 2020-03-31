@@ -29,8 +29,12 @@ body {
 
 /*----Card------*/
 
+.cardContainer {
+    margin-top: 100px;
+    margin-bottom: 50px;
+}
+
 .card {
-    margin-top: 50px;
     height: auto;
 }
 
@@ -39,19 +43,25 @@ img {
     height: 300px;
 }
 
+.card-body {
+    padding: 10px 20px;
+}
+
 .card-title {
     color: #92222d;
-    bottom: 0;
-    left: 0;
     max-width: 100%;
-    padding: 24px;
+    margin-bottom: 5px;
+    padding: 10px 24px;
     font-size: 20px;
     font-weight: 400;
     font-family: 'Unna', serif;
 }
 
-.card-content p {
-    margin: 0;
+.card-text {
+    margin-bottom: 10px;
+}
+
+.card-text p {
     color: #212529;
     font-size: 20px;
     font-weight: 300;
