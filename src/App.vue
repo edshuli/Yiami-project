@@ -1,34 +1,21 @@
 <template>
   <div id="app">
-    <HomePage msg="Welcome to Your Vue.js App"/>
-    <HomeContainer/>
-    <Cards v-bind:posts="posts"/>
+    <app-navigation></app-navigation>
+    
+    <router-view></router-view>
+ 
   </div>
 </template>
 
 <script>
-import HomePage from './components/HomePage.vue'
-import HomeContainer from './components/HomeContainer.vue'
-import Cards from './components/Cards.vue'
-import axios from 'axios'
+import AppNavigation from '@/components/AppNavigation';
+
+
 
 export default {
   name: 'App',
   components: {
-    HomePage,
-    HomeContainer,
-    Cards
-  },
-  data() {
-      return{
-        posts: []
-      }
-  },
-  created(){
-      axios.get('https://www.themealdb.com/api/json/v2/9973533/randomselection.php')
-        .then(res => {this.posts = res.data})
-        .catch(err => console.log(err));
-        
+    AppNavigation,
   }
 }
 </script>
@@ -40,6 +27,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  margin-top: 100px;
 }
+
 </style>

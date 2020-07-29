@@ -1,65 +1,62 @@
 <template>
-    <div class="container-fluid calloutContainer">
-      
+   <div class="container-fluid callout-container">
       <!-- Callout -->
       <div class="row">
-          <div class="col-12">
-              <section class="callout jumbotron text-center">
-                  <h1 class="jumbotron-header">Your online cooking book!</h1>
-                  <hr class="dividers">
-                  <p class="lead">In Greece they say:
-                      <span class="smallTitle">Love passes through the stomach!</span> So here your will find all kind of recipes to win the heart of your beloved ones!</P>
-              </section>
-          </div>
-      </div>
+            <div class="col-sm-6">
+                <h2 class="products-font text-black">Be your own chef !</h2>
+              <!--  {% for c in current_categories %}
+                    <a class="category-badge text-decoration-none" href="{% url 'products' %}?category={{ c.name }}">
+                        <span class="p-2 mt-2 badge badge-white text-black rounded-0 border border-dark">{{ c.friendly_name }}</span>
+                    </a>
+                {% endfor %} -->
+            </div>
+            <div class="col-sm-6 d-flex justify-content-center">
+                <div class="sort-select-wrapper w-30">
+                    <select id="sort-selector" class="custom-select custom-select-sm rounded-0 border border-{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
+                        <option value="reset">Sort by...</option>
+                        <option value="name_asc" >Name (A-Z)</option>
+                        <option value="name_desc">Name (Z-A)</option>
+                        <option value="category_asc">Category (A-Z)</option>
+                        <option value="category_desc">Category (Z-A)</option>
+                     </select>
+                 </div>
+            </div>    
+        </div>
   </div>
-</template>
 
+</template>
+    
 <script>
 export default {
-   name: 'HomeContainer'
+    name: 'HomeContainer'  
 }
-
 </script>
+  
+
 
 <style scoped>
-   /*Jumbotron*/
-.jumbotron {
-    margin-top: 30%;
-    background-color: #e9ecef03;
+.products-font{
+    font-family: 'Montaga', serif;
+    font-weight: 700;
+    text-transform: uppercase;  
+    letter-spacing: 0.1em;
+    font-size: 20px;
+    color: #4e4d4b;
 }
-.jumbotron-header {
+
+#sort-selector{
+    background-color: transparent;
+}
+
+.border{
+    border: transparent!important;
+}
+
+.header {
     color: #f8f9fa;
     font-weight: 400;
     font-size:30px;
     margin-bottom: 30px;
     font-family: 'Open Sans', sans-serif;
-}
-.jumbotron .lead {
-    margin: 25px 0;
-    color: #f8f9fa;
-    font-size: 25px;
-}
-.smallTitle {
-    color: #46090f;
-    font-weight: 700;
-}
-
-/*-----Media Queries---*/
-@media(max-width: 361px) {
-    .jumbotron .lead {
-        font-size: 20px;
-    }
-}
-
-/*Ipad*/
-
-@media (min-width:599px) {
-    .jumbotron {
-        margin-top: 15%;
-    }
-    .jumbotron-header {
-       font-size:40px;
-    }
 }
 </style>

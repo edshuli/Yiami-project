@@ -1,41 +1,27 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans|Sacramento|Ubuntu:100,200,300,400,500,600,700|Unna&display=swap:100,200,300,400,500,600,700');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Sacramento&family=Montserrat&family=Nunito+Sans&display=swap');
 body {
     height: 100vh;
-    background: url(hpImg.jpg) no-repeat bottom right fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    max-width: 100%;
-    font-family: 'Ubuntu', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     color: #222;
     font-weight: 400;
-    background-color: #f6efe5;
+    background-color: #f8eeed;
 }
 
 
 /*-----------CalloutContainer--------*/
 
-.opaque-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.19);
-}
-
 
 /*----Card------*/
 
-.cardContainer {
-    margin-top: 100px;
+.card-container {
+    margin-top: 50px;
     margin-bottom: 50px;
 }
 
 .card {
     height: auto;
     margin-bottom: 20px;
+    background-color: #d0b0b3;
 }
 
 .card-img-top {
@@ -49,7 +35,7 @@ body {
 }
 
 .card-title {
-    color: #92222d;
+    color: #fefefd;
     max-width: 100%;
     margin-bottom: 5px;
     padding: 10px 24px;
@@ -62,38 +48,19 @@ body {
     margin-bottom: 10px;
 }
 
-.card-text p {
-    color: #212529;
+.card-text {
+    color: #fefefd;
     font-size: 20px;
     font-weight: 300;
 }
 
 .card-action {
-    background-color: #cd5c5c8a;
+    background-color: transparent;
 }
 
 .card .card-action a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating) {
-    color: #212529;
+    color: #fefefd;
 }
 
 
 /*-----Media Queries---*/
-
-@media(max-width: 639px) {
-    #menu-dropdown {
-        background-color: #dae0e5bd;
-    }
-}
-
-@media (min-width: 1025px) {
-    body {
-        background: url(hmImg1.jpg) no-repeat bottom right fixed;
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
-        background-size: cover;
-    }
-    .jumbotron {
-        margin-top: 5%;
-    }
-}
