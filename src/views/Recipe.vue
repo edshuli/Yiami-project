@@ -1,81 +1,72 @@
 <template>
     <div class="container recipeContainer">
-       <ul>
-           <li>item 1</li>
-           <li>item 2</li>
-       </ul>
-
-
-
-      <!--  <div class="card">
-            <div class="row">
-                <div class="col-sm-12 col-md-12 col-lg-12">
-                    <img class="card-img-top" src="{{ recipes.image }}" alt="Image for {{ recipes.name }}">
-                    <div class="cuisine">
-                        <span class="rec-info">Course:</span><span class="rec-info-desc">{{ recipes.course }}</span> 
-                        <span class="rec-info">Cuisine:</span><span class="rec-info-desc">{{ recipes.cuisine }}</span> 
-                        <span class="rec-info">Allergens:</span>
-                        {% for a in recipes.allergens %}
-                        <span class="rec-info-desc">{{ a }}</span>
-                        {% endfor %}
-                        <span class="rec-info">By:</span><span class="rec-info-desc"> {{ recipes.author }}</span>
-                        <span class="btn btn-counter multiple-count" data-count="0">&#x2764;</span>
+      <div class="card">
+            <div v-for="x in recipe" :key="x.id" class="row">
+                <div v-for="rec in x" :key="rec.idMeal"  class="col-sm-12 col-md-12 col-lg-12">
+                     <div class="card-body text-center">
+                        <h2>{{ rec.strMeal }}</h2>
                     </div> 
-                    <div class="card-body text-center">
-                        <h2>{{ recipes.name }}</h2>
+                    <img class="card-img-top" :src="rec.strMealThumb">
+                    <div class="cuisine">
+                        <span class="rec-info">Course:</span><span class="rec-info-desc">{{ rec.strCategory }}</span> 
+                        <span class="rec-info">Cuisine:</span><span class="rec-info-desc">{{ rec.strArea }}</span> 
                     </div>    
-                    <div class="rec-description text-center">
-                        <p>{{ recipes.description }}</p>
-                        <p>{{ recipes.notes }}</p>
-                    </div>
                     <hr>
                     <div class="ingredientes">
                         <h3 class="text-center">Ingredients</h3>
-                        {% for ingredient in recipes.ingredient %}
                             <ul>
-                                <li>{{ ingredient }}</li>
+                                <li>{{ rec.strMeasure1 }} {{ rec.strIngredient1 }} </li>
+                                <li>{{ rec.strMeasure2 }} {{ rec.strIngredient2 }}</li>
+                                <li>{{ rec.strMeasure3 }} {{ rec.strIngredient3 }}</li>
+                                <li>{{ rec.strMeasure4 }} {{ rec.strIngredient4 }}</li>
+                                <li>{{ rec.strMeasure5 }} {{ rec.strIngredient5 }}</li>
+                                <li>{{ rec.strMeasure6 }} {{ rec.strIngredient6 }}</li>
+                                <li>{{ rec.strMeasure7 }} {{ rec.strIngredient7 }}</li>
+                                <li>{{ rec.strMeasure8 }} {{ rec.strIngredient8 }}</li>
+                                <li>{{ rec.strMeasure9 }} {{ rec.strIngredient9 }}</li>
+                                <li>{{ rec.strMeasure10 }} {{ rec.strIngredient10 }}</li>
+                                <li>{{ rec.strMeasure11 }} {{ rec.strIngredient11 }}</li>
+                                <li>{{ rec.strMeasure12 }} {{ rec.strIngredient12 }}</li>
+                                <li>{{ rec.strMeasure13 }} {{ rec.strIngredient13 }}</li>
+                                <li>{{ rec.strMeasure14 }} {{ rec.strIngredient14 }}</li>
+                                <li>{{ rec.strMeasure15 }} {{ rec.strIngredient15 }}</li>
+                                <li>{{ rec.strMeasure16 }} {{ rec.strIngredient16 }}</li>
+                                <li>{{ rec.strMeasure17 }} {{ rec.strIngredient17 }}</li>
+                                <li>{{ rec.strMeasure18 }} {{ rec.strIngredient18 }}</li>
+                                <li>{{ rec.strMeasure19 }} {{ rec.strIngredient19 }}</li>
+                                <li>{{ rec.strMeasure120 }} {{ rec.strIngredient20 }}</li>
                             </ul>
-                        {% endfor %}
                     </div>
                     <hr>
                     <div class="prep-steps">
                         <h4 class="text-center">Preparation Steps</h4> 
-                        {% for step in recipes.step %}
-                            <ul>
-                                <li>{{ step }}</li>
-                            </ul>
-                        {% endfor %}
+                            <p>{{ rec.strInstructions }}</p>
                     </div>
                     <hr>
-                    <div class="row ingredient-group">
-                        {% for rec in recipes.ingredientGroup %}
-                        <div class="col-sm-12 col-md-6 col-lg-6">
-                            <h5 class="text-center">{{ rec.name }}</h5>
-                            <div class="row ingred-group-amount">
-                                {% for ingredient in rec.ingredient %} 
-                                    <ul class="ingredientGroup-ul">
-                                        <li>
-                                            {{ingredient.amount}}
-                                            {{ingredient.unit}}
-                                            {{ingredient.name}}
-                                            {{ingredient.preparation}}
-                                        </li>
-                                    </ul>
-                                {% endfor %} 
-                            </div>
-                        </div>
-                        {% endfor %}
-                    </div>
                 </div>
             </div>
-        </div>-->
+        </div>
         
     </div>
 </template>
 
 <script>
-export default {
-}
+import Vue from "vue";
+import axios from 'axios'
+export default Vue.extend({
+  name: "Recipe",
+  data() {
+      return{
+        recipe: []
+      }
+  },
+  created(){
+      axios.get('https://www.themealdb.com/api/json/v2/9973533/lookup.php?i=idMeal')
+        .then(item => {this.recipe = item.data})
+        .catch(err => console.log(err));
+        
+  }
+});
 </script>
 
 <style scoped>

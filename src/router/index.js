@@ -18,6 +18,12 @@ const routes = [{
         meta: {
             authRequired: true
         }
+    },
+    {
+        path: '/recipe',
+        name: 'recipe',
+        component: () =>
+            import ('../views/Recipe.vue')
     }
 ]
 
