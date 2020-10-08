@@ -3,19 +3,19 @@
     <div v-for="post in posts" :key="post.id" class="row">
       <div v-for="item in post" :key="item.idMeal" class="col-md-6 col-lg-6">
         <div class="card">
-          <router-link to="/recipe">
+          <a href="/" >
             <img class="card-img-top" :src="item.strMealThumb"
-          /></router-link>
+          /></a>
           <div class="card-body">
-            <h5 class="card-title">{{ item.strMeal }}</h5>
+            <h5  @click="singleRecipe(item.idMeal)" class="card-title">{{ item.strMeal }}</h5>
             <p class="card-text">{{ item.strArea }}</p>
             <div class="card-action btt-button">
-              <router-link to="recipe" class="btt-link d-flex h-100"
+              <a href="/" class="btt-link d-flex h-100"
                 ><i
                   class="fas fa-angle-right mx-auto my-auto"
                   target="_blank"
                 ></i
-              ></router-link>
+              ></a>
             </div>
           </div>
         </div>
@@ -39,6 +39,11 @@ export default Vue.extend({
         .then(res => {this.posts = res.data})
         .catch(err => console.log(err));
         
+  },
+   methods: {
+      singleRecipe (mealId) {
+          this.$router.push({name:'recipe', params: {id:mealId} })
+      }        
   }
 });
 </script>
