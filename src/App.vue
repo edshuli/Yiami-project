@@ -1,23 +1,19 @@
 <template>
   <div id="app">
     <app-navigation></app-navigation>
-    
     <router-view></router-view>
- 
   </div>
 </template>
 
 <script>
-import AppNavigation from '@/components/AppNavigation';
-
-
+import AppNavigation from "@/components/AppNavigation";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
     AppNavigation,
-  }
-}
+  },
+};
 </script>
 
 <style>
@@ -29,5 +25,4 @@ export default {
   color: #2c3e50;
   margin-top: 100px;
 }
-
 </style>

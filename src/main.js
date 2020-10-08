@@ -5,8 +5,8 @@ import VueRouter from 'vue-router'
 import './plugins/bootstrap-vue'
 import App from './App.vue'
 import jQuery from 'jquery'
-import { store } from './store'
-import router from "./router";
+import store from './store.js'
+import router from "./router.js";
 
 
 

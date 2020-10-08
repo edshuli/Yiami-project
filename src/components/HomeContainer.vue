@@ -4,11 +4,6 @@
     <div class="row">
       <div class="col-sm-6">
         <h2 class="products-font text-black">Be your own chef !</h2>
-        <!--  {% for c in current_categories %}
-                    <a class="category-badge text-decoration-none" href="{% url 'products' %}?category={{ c.name }}">
-                        <span class="p-2 mt-2 badge badge-white text-black rounded-0 border border-dark">{{ c.friendly_name }}</span>
-                    </a>
-                {% endfor %} -->
       </div>
       <div class="col-sm-6 d-flex justify-content-center">
         <div class="sort-select-wrapper w-30">
