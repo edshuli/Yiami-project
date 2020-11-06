@@ -5,24 +5,30 @@
         <div class="card">
           <a href="/"> <img class="card-img-top" :src="item.strMealThumb"/></a>
           <div class="card-body">
-            <h5 @click="singleRecipe(item.idMeal)" class="card-title">
+            <h5  class="card-title">
               {{ item.strMeal }}
             </h5>
             <p class="card-text">{{ item.strArea }}</p>
             <div class="card-action btt-button">
-              <router-link class="btt-link d-flex h-100" to="/recipe"
+              <router-link
+                :to="'recipe/' + item.idMeal"
+                class="btt-link d-flex h-100"
                 ><i
                   class="fas fa-angle-right mx-auto my-auto"
                   target="_blank"
                 ></i>
-                <span v-on:click="setCurrentRecipe(i)"></span
-              ></router-link>
+                <span @click="item.idMeal"></span>
+                <!-- <span v-on:click="setCurrentRecipe(i)"></span 
+              >--></router-link
+              >
               <!-- <a href="/" class="btt-link d-flex h-100"
                 ><i
                   class="fas fa-angle-right mx-auto my-auto"
                   target="_blank"
                 ></i
-              ></a> -->
+              ></a> 
+              
+              :to="'recipe/' + item.idMeal"-->
             </div>
           </div>
         </div>
@@ -32,17 +38,20 @@
 </template>
 
 <script>
+import { mapActions } from "vuex";
+
 export default {
   name: "recipes",
+
   data() {
     return {};
   },
   props: ["recipes"],
   methods: {
-    setCurrentRecipe: function(payload) {
-      this.$store.dispatch("setCurrentRecipe", payload);
-    },
-  },
+    ...mapActions(["fetchRecipes", "fetchRecipe"])
+  }
+  
+ 
 };
 </script>
 
